@@ -1,8 +1,11 @@
 const http = require('http');
 
+const history = [];
+
 const server = http.createServer((req, res) => {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.write('hello');
+    history.push(req.url);
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    history.forEach(item => res.write(`${item}</br>`));
     res.end();
 });
 
