@@ -11,6 +11,10 @@ postgres, без ORM, 2 таблицы: users с полем balance, payments
 выставить счет: POST https://demo-paygate.steaminventoryhelper.com/invoice
   body пустой
   ответ будет: { success, id }
+  
+```bash
+curl -X POST https://demo-paygate.steaminventoryhelper.com/invoice
+```
 
 через 5 секунд придет POST запрос на /callback по ip адресу, с которого был выставлен счет
   id: string
