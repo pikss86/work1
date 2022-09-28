@@ -1,0 +1,27 @@
+{
+  "name": "work1",
+  "version": "1.0.0",
+  "description": "test work",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pikss86/work1.git"
+  },
+  "keywords": [
+    "node",
+    "test",
+    "work"
+  ],
+  "author": "Pavel Ermolaev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pikss86/work1/issues"
+  },
+  "homepage": "https://github.com/pikss86/work1#readme",
+  "dependencies": {
+    "pg": "^8.8.0"
+  }
+}
