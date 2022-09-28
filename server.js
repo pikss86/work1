@@ -1,12 +1,23 @@
-const http = require('http');
+import Fastify from 'fastify'
 
-const history = [];
+var counter = 0;
 
-const server = http.createServer((req, res) => {
-    history.push(req.url);
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    history.forEach(item => res.write(`${item}</br>`));
-    res.end();
-});
+const fastify = Fastify({
+    logger: true
+})
 
-server.listen(8080);
+fastify.all('/callback', function (request, reply) {
+    counter++;
+    reply.send(counter);
+})
+
+fastify.get('/', function (request, reply) {
+    reply.send(counter);
+})
+
+fastify.listen({ port: 8080 }, function (err, address) {
+    if (err) {
+        fastify.log.error(err)
+        process.exit(1)
+    }
+})

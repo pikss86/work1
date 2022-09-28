@@ -7,6 +7,7 @@
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pikss86/work1.git"
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/pikss86/work1#readme",
   "dependencies": {
+    "fastify": "^4.6.0",
     "pg": "^8.8.0"
   }
 }
