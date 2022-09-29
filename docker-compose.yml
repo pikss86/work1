@@ -9,6 +9,7 @@ services:
     volumes:
       - ./:/usr/src/app/
   database:
+    hostname: postgres
     container_name: pg_container
     image: "postgres:14"
     environment:
@@ -17,6 +18,8 @@ services:
       POSTGRES_DB: postgres
     ports:
       - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
   pgadmin:
     container_name: pgadmin4_container
     image: dpage/pgadmin4
